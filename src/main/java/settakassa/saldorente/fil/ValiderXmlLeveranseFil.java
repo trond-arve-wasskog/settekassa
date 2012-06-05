@@ -1,10 +1,9 @@
-package settakassa.leveranse;
+package settakassa.saldorente.fil;
 
 import settakassa.core.EntityId;
 import settakassa.core.Executable;
 
-public class LeveranseKvalitetskontroll implements Executable {
+public class ValiderXmlLeveranseFil implements Executable {
 	public void execute(EntityId id) {
 	}
-
 }

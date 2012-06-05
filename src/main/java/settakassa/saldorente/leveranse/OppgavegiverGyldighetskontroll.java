@@ -1,9 +1,9 @@
-package settakassa.oppgave;
+package settakassa.saldorente.leveranse;
 
 import settakassa.core.EntityId;
 import settakassa.core.Executable;
 
-public class OppgaveSannsynlighetskontroll implements Executable {
+public class OppgavegiverGyldighetskontroll implements Executable {
 	public void execute(EntityId id) {
 	}
 

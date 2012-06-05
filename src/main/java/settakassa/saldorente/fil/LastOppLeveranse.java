@@ -1,9 +1,11 @@
-package settakassa.oppgave;
+
+package settakassa.saldorente.fil;
 
 import settakassa.core.EntityId;
 import settakassa.core.Executable;
 
-public class IdentifiserOppgaveGiver implements Executable {
+public class LastOppLeveranse implements Executable {
 	public void execute(EntityId id) {
 	}
+
 }

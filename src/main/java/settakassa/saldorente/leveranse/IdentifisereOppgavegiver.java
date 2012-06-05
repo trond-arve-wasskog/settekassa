@@ -1,9 +1,9 @@
-package settakassa.leveranse;
+package settakassa.saldorente.leveranse;
 
 import settakassa.core.EntityId;
 import settakassa.core.Executable;
 
-public class IdentifisereInnsender implements Executable {
+public class IdentifisereOppgavegiver implements Executable {
 	public void execute(EntityId id) {
 	}
 
