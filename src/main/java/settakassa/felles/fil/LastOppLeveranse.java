@@ -1,9 +1,11 @@
-package settakassa.saldorente.fil;
+
+package settakassa.felles.fil;
 
 import settakassa.core.EntityId;
 import settakassa.core.Executable;
 
-public class LastInnSaldoRenteLeveranseFil implements Executable {
+public class LastOppLeveranse implements Executable {
 	public void execute(EntityId id) {
 	}
+
 }

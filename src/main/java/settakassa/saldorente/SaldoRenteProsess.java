@@ -1,12 +1,13 @@
 package settakassa.saldorente;
 
 import settakassa.core.MakroExecutable;
-import settakassa.saldorente.fil.LastOppLeveranse;
-import settakassa.saldorente.fil.ValiderXmlLeveranseFil;
+import settakassa.felles.fil.LastOppLeveranse;
+import settakassa.felles.fil.ValiderXmlLeveranseFil;
 import settakassa.saldorente.leveranse.GenererKvittering;
+import settakassa.saldorente.leveranse.SaldoRenteLeveransekontroll;
 
-public class SaldoRenteBehandler extends MakroExecutable {
-	public SaldoRenteBehandler() {
+public class SaldoRenteProsess extends MakroExecutable {
+	public SaldoRenteProsess() {
 		add(new ValiderXmlLeveranseFil());
 		add(new LastOppLeveranse());
 		add(new SaldoRenteLeveransekontroll());

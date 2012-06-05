@@ -1,10 +1,8 @@
-package settakassa.saldorente;
+package settakassa.saldorente.leveranse;
 
 import settakassa.core.MakroExecutable;
 import settakassa.felles.leveranse.Innsenderkontroll;
-import settakassa.saldorente.leveranse.Leveransekontroll;
-import settakassa.saldorente.leveranse.Oppgavegiverkontroll;
-import settakassa.saldorente.leveranse.Oppgavekontroll;
+import settakassa.felles.leveranse.Oppgavegiverkontroll;
 
 public class SaldoRenteLeveransekontroll extends MakroExecutable {
 	
