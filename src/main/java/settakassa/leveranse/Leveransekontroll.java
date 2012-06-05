@@ -1,4 +1,4 @@
-package settakassa.saldorente;
+package settakassa.leveranse;
 
 import settakassa.core.MakroExecutable;
 

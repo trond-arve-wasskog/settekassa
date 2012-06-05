@@ -1,6 +1,5 @@
 package settakassa.leveranse;
 
-import settakassa.LeveranseRepository;
 import settakassa.core.EntityId;
 import settakassa.core.Executable;
 import settakassa.core.MakroExecutable;
@@ -8,6 +7,7 @@ import settakassa.oppgave.IdentifiserOppgaveeier;
 import settakassa.oppgave.OppgaveDublettKontroll;
 import settakassa.oppgave.OppgaveInnholdskontroll;
 import settakassa.oppgave.OppgaveSannsynlighetskontroll;
+import settakassa.repository.LeveranseRepository;
 
 public class Oppgavekontroll implements Executable {
 	private MakroExecutable makroExecutable = new MakroExecutable();

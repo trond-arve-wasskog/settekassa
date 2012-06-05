@@ -1,4 +1,4 @@
-package settakassa;
+package settakassa.repository;
 
 import settakassa.core.EntityId;
 
