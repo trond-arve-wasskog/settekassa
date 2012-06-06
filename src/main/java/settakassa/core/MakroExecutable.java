@@ -12,7 +12,7 @@ public class MakroExecutable implements Executable {
 
    public void execute(EntityId id) {
       for (Executable executable : executableList) {
-         executable.equals(id);
+         executable.execute(id);
       }
    }
 }
