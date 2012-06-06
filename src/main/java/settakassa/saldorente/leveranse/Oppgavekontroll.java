@@ -20,8 +20,7 @@ public class Oppgavekontroll implements Executable {
    }
 
    public void execute(EntityId leveranseId) {
-      Iterable<EntityId> oppgaveIDer = LeveranseRepository
-            .hentOppgaveIDer(leveranseId);
+      Iterable<EntityId> oppgaveIDer = LeveranseRepository.hentOppgaveIDer(leveranseId);
       for (EntityId oppgaveId : oppgaveIDer) {
          makroExecutable.execute(oppgaveId);
       }
