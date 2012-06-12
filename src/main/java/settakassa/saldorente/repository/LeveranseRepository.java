@@ -3,8 +3,8 @@ package settakassa.saldorente.repository;
 import java.util.Map;
 
 import settakassa.core.EntityId;
+import settakassa.domene.Leveranse;
 import settakassa.domene.Oppgave;
-import settekassa.domene.Leveranse;
 
 import com.google.common.collect.Maps;
 

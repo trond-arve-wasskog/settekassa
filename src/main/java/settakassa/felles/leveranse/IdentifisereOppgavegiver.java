@@ -2,9 +2,9 @@ package settakassa.felles.leveranse;
 
 import settakassa.core.EntityId;
 import settakassa.core.Executable;
+import settakassa.domene.Leveranse;
 import settakassa.saldorente.repository.LeveranseRepository;
 import settakassa.service.PartService;
-import settekassa.domene.Leveranse;
 
 /**
  * Bør kunne være generell MEN! For AKU er innsender og oppgavegiver den samme. For eksempel: Svenske skattemyndighet

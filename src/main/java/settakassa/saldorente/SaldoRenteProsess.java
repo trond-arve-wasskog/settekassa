@@ -4,12 +4,12 @@ import settakassa.core.EntityId;
 import settakassa.core.Executable;
 import settakassa.core.MakroExecutable;
 import settakassa.domene.Innsending;
+import settakassa.domene.Leveranse;
 import settakassa.felles.fil.ValiderXmlLeveranseFil;
 import settakassa.felles.leveranse.Innlesningskontroll;
 import settakassa.saldorente.leveranse.GenererKvittering;
 import settakassa.saldorente.leveranse.SaldoRenteKontroll;
 import settakassa.service.InnsendingService;
-import settekassa.domene.Leveranse;
 
 public class SaldoRenteProsess implements Executable {
     private MakroExecutable makroExecutable = new MakroExecutable();

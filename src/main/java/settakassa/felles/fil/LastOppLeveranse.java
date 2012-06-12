@@ -2,9 +2,9 @@ package settakassa.felles.fil;
 
 import settakassa.core.EntityId;
 import settakassa.core.Executable;
+import settakassa.domene.Leveranse;
 import settakassa.domene.Oppgave;
 import settakassa.saldorente.repository.LeveranseRepository;
-import settekassa.domene.Leveranse;
 
 /**
  * Generelt prosess steg? I dagens kode benyttes SaldoRenteXMLReader til å hente ut leveranse XML og populere

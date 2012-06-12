@@ -3,7 +3,6 @@ package settakassa.domene;
 import java.util.Set;
 
 import settakassa.core.EntityId;
-import settekassa.domene.Leveranse;
 
 import com.google.common.collect.Sets;
 
