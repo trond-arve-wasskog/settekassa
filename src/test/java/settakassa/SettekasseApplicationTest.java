@@ -6,11 +6,14 @@ import settakassa.aku.AkuProsess;
 import settakassa.core.SettekasseApplication;
 import settakassa.saldorente.SaldoRenteProsess;
 
+/**
+ * Design kommentar: Hvordan plugger vi på JobbInfo? Bøtte? Parameter? Arv? Static final klasse? JobbInfo jobInfo =
+ * settekasseApplication.prosesserLeveranser();
+ */
 public class SettekasseApplicationTest {
 
     @Test
     public void skalProssessereEnSaldoRenteLeveranse() {
-        // En leveranse ligger på griden. Denne skal prossesseres...
         SettekasseApplication settekasseApplication = new SettekasseApplication(new SaldoRenteProsess());
         settekasseApplication.prosesserLeveranser();
     }

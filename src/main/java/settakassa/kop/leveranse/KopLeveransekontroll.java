@@ -1,10 +1,10 @@
 package settakassa.kop.leveranse;
 
-import settakassa.core.EntityId;
 import settakassa.core.Executable;
+import settakassa.domene.Innsending;
 
-public class KopLeveransekontroll implements Executable {
-   public void execute(EntityId id) {
-   }
+public class KopLeveransekontroll implements Executable<Innsending> {
+    public void execute(Innsending innsending) {
+    }
 
 }

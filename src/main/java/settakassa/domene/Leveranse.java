@@ -5,9 +5,11 @@ import settakassa.core.EntityId;
 public class Leveranse {
 
     private EntityId<Integer> id;// UUID
+    private String oppgavetype;
 
-    public Leveranse(EntityId<Integer> id) {
+    public Leveranse(EntityId<Integer> id, String oppgavetype) {
         this.id = id;
+        this.oppgavetype = oppgavetype;
     }
 
     public String getOppgavegiverOrgansisasjonsnummer() {
@@ -20,5 +22,13 @@ public class Leveranse {
 
     public EntityId<Integer> getId() {
         return id;
+    }
+
+    public String getOppgavetype() {
+        return oppgavetype;
+    }
+
+    public LeveranseId getLeveranseId() {
+        return new LeveranseId(id.getVerdi());
     }
 }

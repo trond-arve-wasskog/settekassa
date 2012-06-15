@@ -1,16 +1,15 @@
 package settakassa.core;
 
-
 public class SettekasseApplication {
-    private Executable leveranseprosess;
+    private Executable<Void> prosess;
 
-    public SettekasseApplication(Executable leveranseprosess) {
-        this.leveranseprosess = leveranseprosess;
+    public SettekasseApplication(Executable<Void> prosess) {
+        this.prosess = prosess;
     }
 
     public void prosesserLeveranser() {
-        System.out.println(String.format("Prosesserer leveranser"));
-        leveranseprosess.execute(null);
+        System.out.println("Start prosess");
+        prosess.execute(null);
     }
 
 }

@@ -1,11 +1,12 @@
 package settakassa.felles.leveranse;
 
-import settakassa.core.EntityId;
 import settakassa.core.Executable;
+import settakassa.domene.Innsending;
 
-public class IdentifisereInnsender implements Executable {
-    public void execute(EntityId id) {
-        System.out.println(String.format("Identifiserer innsender for leveranse med id %s", id));
+public class IdentifisereInnsender implements Executable<Innsending> {
+    public void execute(Innsending innsending) {
+        System.out.println(String.format("Identifiserer innsender for leveranse med id %s", innsending.id));
+        // identifiserer innsender
     }
 
 }

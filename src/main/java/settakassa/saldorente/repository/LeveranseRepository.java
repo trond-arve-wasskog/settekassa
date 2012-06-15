@@ -2,18 +2,16 @@ package settakassa.saldorente.repository;
 
 import java.util.Map;
 
-import settakassa.core.EntityId;
 import settakassa.domene.Leveranse;
-import settakassa.domene.Oppgave;
+import settakassa.domene.LeveranseId;
 
 import com.google.common.collect.Maps;
 
+/**
+ * Design kommentar: Leveranserepository vil være felles. I felles modulen har vi et generelt
+ * oppgave-repository/interface. Hver ordning implementerer sin oppgave repository med sine bøtter. OPPGAVE_INN
+ * inneholder de oppgavene som skal prosesseres. Denne ligger i felles modulen.
+ */
 public class LeveranseRepository {
-    public static final Map<EntityId, Oppgave> OPPGAVER = Maps.newHashMap();
-    public static final Map<EntityId, Leveranse> LEVERANSE = Maps.newHashMap();
-
-    public static Iterable<EntityId> hentOppgaveIDer(EntityId leveranseId) {
-        return OPPGAVER.keySet();
-    }
-
+    public static final Map<LeveranseId, Leveranse> LEVERANSER = Maps.newHashMap();
 }

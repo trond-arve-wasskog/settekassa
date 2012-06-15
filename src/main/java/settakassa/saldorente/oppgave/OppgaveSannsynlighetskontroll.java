@@ -1,11 +1,11 @@
 package settakassa.saldorente.oppgave;
 
-import settakassa.core.EntityId;
 import settakassa.core.Executable;
+import settakassa.domene.OppgaveId;
 
-public class OppgaveSannsynlighetskontroll implements Executable {
-    public void execute(EntityId id) {
-        System.out.println(String.format("Sannsynlighetskontroll for oppgave med id %s", id));
+public class OppgaveSannsynlighetskontroll implements Executable<OppgaveId> {
+    public void execute(OppgaveId oppgaveId) {
+        System.out.println(String.format("Sannsynlighetskontroll for oppgave med id %s", oppgaveId));
     }
 
 }

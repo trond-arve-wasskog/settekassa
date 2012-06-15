@@ -1,18 +1,23 @@
 package settakassa.aku.domene;
 
-import settakassa.core.EntityId;
 import settakassa.domene.Oppgave;
+import settakassa.domene.OppgaveId;
 
 public class OppgaveAku extends Oppgave {
 
-    public OppgaveAku(EntityId<Integer> id) {
-        super(id);
+    @Override
+    public String getIdentifikatorer() {
+        // I forbindelse med oppgaveeier identifisering
+        return null;
     }
 
     @Override
-    public String getIdentifikatorer() {
-        // TODO Auto-generated method stub
-        return null;
+    public OppgaveId getOppgaveId() {
+        return new OppgaveId(id.getVerdi());
+    }
+
+    @Override
+    public void innholdskontroll() {
     }
 
 }
