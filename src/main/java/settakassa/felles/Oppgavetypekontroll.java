@@ -1,6 +1,7 @@
 package settakassa.felles;
 
 import settakassa.core.Executable;
+import settakassa.core.JobbInfo;
 import settakassa.domene.Fil;
 
 /**
@@ -8,8 +9,9 @@ import settakassa.domene.Fil;
  */
 public class Oppgavetypekontroll implements Executable<Fil> {
 
-    public void execute(Fil fil) {
+    public JobbInfo execute(Fil fil) {
         // magnet felles kode
+        return new JobbInfo();
     }
 
 }

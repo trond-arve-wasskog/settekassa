@@ -7,9 +7,9 @@ public class SettekasseApplication {
         this.prosess = prosess;
     }
 
-    public void prosesserLeveranser() {
+    public JobbInfo prosesserLeveranser() {
         System.out.println("Start prosess");
-        prosess.execute(null);
+        return prosess.execute(null);
     }
 
 }

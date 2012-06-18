@@ -1,6 +1,5 @@
 package settakassa.core;
 
-
 /**
  * En Executable har ansvaret for å kjøre et steg i en prosess. <br>
  * 
@@ -9,5 +8,5 @@ package settakassa.core;
  *            Mer at på grid bør objektet være en nøkkel som prosesssteget benytter til å gjøre oppslag i et repository.
  */
 public interface Executable<T> {
-    void execute(T context);
+    JobbInfo execute(T context);
 }

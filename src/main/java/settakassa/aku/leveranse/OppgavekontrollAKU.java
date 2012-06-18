@@ -1,6 +1,7 @@
 package settakassa.aku.leveranse;
 
 import settakassa.core.Executable;
+import settakassa.core.JobbInfo;
 import settakassa.core.MakroExecutable;
 import settakassa.domene.LeveranseId;
 import settakassa.domene.OppgaveId;
@@ -23,11 +24,13 @@ public class OppgavekontrollAKU implements Executable<LeveranseId> {
         makroExecutable.add(new OppgaveSannsynlighetskontroll());
     }
 
-    public void execute(LeveranseId leveranseId) {
+    public JobbInfo execute(LeveranseId leveranseId) {
+        JobbInfo jobbInfoOppgaver = new JobbInfo();
         Iterable<OppgaveId> oppgaveIDer = OppgaveRepository.hentOppgaveIDer();
         for (OppgaveId oppgaveId : oppgaveIDer) {
-            makroExecutable.execute(oppgaveId);
+            jobbInfoOppgaver.aggreger(makroExecutable.execute(oppgaveId));
         }
+        return jobbInfoOppgaver;
     }
 
 }

@@ -1,6 +1,7 @@
 package settakassa.saldorente.leveranse;
 
 import settakassa.core.Executable;
+import settakassa.core.JobbInfo;
 import settakassa.core.MakroExecutable;
 import settakassa.domene.LeveranseId;
 import settakassa.domene.OppgaveId;
@@ -24,10 +25,12 @@ public class Oppgavekontroll implements Executable<LeveranseId> {
         makroExecutable.add(new OppgaveSannsynlighetskontroll());
     }
 
-    public void execute(LeveranseId leveranseId) {
+    public JobbInfo execute(LeveranseId leveranseId) {
         Iterable<OppgaveId> oppgaveIDer = OppgaveRepository.hentOppgaveIDer();
+        JobbInfo jobbInfoOppgaver = new JobbInfo();
         for (OppgaveId oppgaveId : oppgaveIDer) {
-            makroExecutable.execute(oppgaveId);
+            jobbInfoOppgaver.aggreger(makroExecutable.execute(oppgaveId));
         }
+        return jobbInfoOppgaver;
     }
 }

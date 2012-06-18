@@ -5,16 +5,17 @@ import java.util.List;
 
 public class MakroExecutable<T> implements Executable<T> {
     private final List<Executable<T>> executableList = new ArrayList<Executable<T>>();
-    private JobbInfo jobbInfo;
 
     public void add(Executable<T> executable) {
         executableList.add(executable);
     }
 
-    public void execute(T context) {
+    public JobbInfo execute(T context) {
+        JobbInfo jobbInfo = new JobbInfo();
         for (Executable<T> executable : executableList) {
-            executable.execute(context);
+            jobbInfo.aggreger(executable.execute(context));
         }
+        return jobbInfo;
     }
 
     public void clear() {

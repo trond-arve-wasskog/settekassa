@@ -1,6 +1,7 @@
 package settakassa.aku;
 
 import settakassa.aku.leveranse.LeveranseKontrollAKU;
+import settakassa.core.JobbInfo;
 import settakassa.core.MakroExecutable;
 import settakassa.domene.Innsending;
 import settakassa.felles.fil.LesFiler;
@@ -21,10 +22,10 @@ public class AkuProsess extends MakroExecutable<Void> {
         makroExecutable.add(new LeveranseKontrollAKU());
     }
 
-    public void execute(Void id) {
+    public JobbInfo execute(Void id) {
         System.out.println("************* AkuProsess ********************");
         Innsending innsending = innsendingService.hentNesteInnsending("AKU");
-        makroExecutable.execute(innsending);
+        return makroExecutable.execute(innsending);
     }
 
 }

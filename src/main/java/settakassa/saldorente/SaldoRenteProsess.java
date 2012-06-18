@@ -1,6 +1,7 @@
 package settakassa.saldorente;
 
 import settakassa.core.Executable;
+import settakassa.core.JobbInfo;
 import settakassa.core.MakroExecutable;
 import settakassa.domene.Innsending;
 import settakassa.felles.fil.LesFiler;
@@ -19,9 +20,10 @@ public class SaldoRenteProsess implements Executable<Void> {
         makroExecutable.add(new Leveransekontroll<OppgaveSaldoRente>(OppgaveSaldoRente.class));
     }
 
-    public void execute(Void id) {
+    public JobbInfo execute(Void id) {
+        JobbInfo jobbInfoProsess = new JobbInfo();
         System.out.println("************* SaldoRenteProsess ********************");
         Innsending innsending = innsendingService.hentNesteInnsending("SALDO_RENTE");
-        makroExecutable.execute(innsending);
+        return jobbInfoProsess.aggreger(makroExecutable.execute(innsending));
     }
 }

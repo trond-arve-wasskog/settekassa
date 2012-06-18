@@ -1,5 +1,6 @@
 package settakassa.felles.fil;
 
+import settakassa.core.JobbInfo;
 import settakassa.core.MakroExecutable;
 import settakassa.domene.Fil;
 import settakassa.domene.Innsending;
@@ -15,14 +16,16 @@ public class LesFiler extends MakroExecutable<Innsending> {
     }
 
     @Override
-    public void execute(Innsending innsending) {
+    public JobbInfo execute(Innsending innsending) {
+        JobbInfo jobbInfoFiler = new JobbInfo();
         System.out.println(String.format("Laster opp leveranser for innsending med id %s", innsending.id));
 
         if (innsending.erGyldig()) {
             for (Fil fil : innsending.filer) {
-                makroExecutable.execute(fil);
+                jobbInfoFiler.aggreger(makroExecutable.execute(fil));
             }
         }
+        return jobbInfoFiler;
 
         // henter xml
         // parser og populerer SaldoRenteLeveranseData og oppretter leveranse og legger på grid

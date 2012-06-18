@@ -1,5 +1,6 @@
 package settakassa.saldorente.leveranse;
 
+import settakassa.core.JobbInfo;
 import settakassa.core.MakroExecutable;
 import settakassa.domene.Innsending;
 import settakassa.domene.Leveranse;
@@ -29,11 +30,13 @@ public class Leveransekontroll<O extends Oppgave> extends MakroExecutable<Innsen
     }
 
     @Override
-    public void execute(Innsending innsending) {
+    public JobbInfo execute(Innsending innsending) {
+        JobbInfo jobbInfoLeveranser = new JobbInfo();
         for (Leveranse leveranse : innsending.getLeveranser()) {
             LeveranseRepository.LEVERANSER.put(leveranse.getLeveranseId(), leveranse);
-            makroExecutable.execute(leveranse.getLeveranseId());
+            jobbInfoLeveranser.aggreger(makroExecutable.execute(leveranse.getLeveranseId()));
         }
+        return jobbInfoLeveranser;
     }
 
 }

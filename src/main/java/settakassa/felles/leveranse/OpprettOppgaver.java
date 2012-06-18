@@ -2,6 +2,7 @@ package settakassa.felles.leveranse;
 
 import settakassa.aku.domene.OppgaveAku;
 import settakassa.core.Executable;
+import settakassa.core.JobbInfo;
 import settakassa.domene.Leveranse;
 import settakassa.domene.LeveranseId;
 import settakassa.domene.Oppgave;
@@ -16,10 +17,11 @@ public class OpprettOppgaver<O extends Oppgave> implements Executable<LeveranseI
         this.oppgaveklasse = oppgaveklasse;
     }
 
-    public void execute(LeveranseId leveranseId) {
+    public JobbInfo execute(LeveranseId leveranseId) {
         Leveranse leveranse = LeveranseRepository.LEVERANSER.get(leveranseId);
         O oppgave = opprettOppgave(oppgaveklasse);
         OppgaveRepository.OPPGAVER_INN.put(oppgave.getOppgaveId(), oppgave);
+        return new JobbInfo();
     }
 
     private O opprettOppgave(Class<O> oppgaveklasse) {
