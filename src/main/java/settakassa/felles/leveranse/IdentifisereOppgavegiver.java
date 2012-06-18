@@ -8,7 +8,7 @@ import settakassa.service.PartService;
 
 /**
  * Bør kunne være generell MEN! For AKU er innsender og oppgavegiver den samme. For eksempel: Svenske skattemyndighet
- * Innsender/Oppgavegiver velges i skjermbildet...Dette steget skal derfor ikke gjøres for AKU.
+ * Innsender/Oppgavegiver velges i skjermbildet.Dette steget skal derfor ikke gjøres for AKU.
  */
 public class IdentifisereOppgavegiver implements Executable<LeveranseId> {
 

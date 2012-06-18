@@ -1,14 +1,13 @@
 package settakassa.domene;
 
-import settakassa.core.EntityId;
+import java.util.UUID;
 
 public class Leveranse {
 
-    private EntityId<Integer> id;// UUID
+    private UUID id = UUID.randomUUID();
     private String oppgavetype;
 
-    public Leveranse(EntityId<Integer> id, String oppgavetype) {
-        this.id = id;
+    public Leveranse(String oppgavetype) {
         this.oppgavetype = oppgavetype;
     }
 
@@ -20,15 +19,11 @@ public class Leveranse {
         // TODO Auto-generated method stub
     }
 
-    public EntityId<Integer> getId() {
-        return id;
-    }
-
     public String getOppgavetype() {
         return oppgavetype;
     }
 
     public LeveranseId getLeveranseId() {
-        return new LeveranseId(id.getVerdi());
+        return new LeveranseId(id);
     }
 }

@@ -1,6 +1,5 @@
 package settakassa.felles;
 
-import settakassa.core.EntityId;
 import settakassa.core.MakroExecutable;
 import settakassa.domene.Fil;
 import settakassa.domene.Leveranse;
@@ -14,7 +13,7 @@ public class OpprettLeveranser extends MakroExecutable<Fil> {
 
     public void execute(Fil fil) {
         if (fil.erGyldig()) {
-            fil.leveranser.add(new Leveranse(new EntityId<Integer>(1), fil.oppgavetype));
+            fil.leveranser.add(new Leveranse(fil.oppgavetype));
         }
     }
 

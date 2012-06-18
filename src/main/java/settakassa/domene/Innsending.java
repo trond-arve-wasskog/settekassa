@@ -1,14 +1,12 @@
 package settakassa.domene;
 
-import java.io.Serializable;
 import java.util.Set;
-
-import settakassa.core.EntityId;
+import java.util.UUID;
 
 import com.google.common.collect.Sets;
 
-public class Innsending implements Serializable {
-    public EntityId<Integer> id;
+public class Innsending {
+    public UUID id = UUID.randomUUID();
 
     private String oppgavetype; // dette ligger egentlig på Fil
     public final Set<Fil> filer = Sets.newHashSet();
@@ -18,7 +16,6 @@ public class Innsending implements Serializable {
     }
 
     public void kontrollerFiler() {
-
     }
 
     public boolean erGyldig() {
